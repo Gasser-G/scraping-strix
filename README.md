@@ -1,1 +1,3 @@
 # scraping-strix
+
+Python script to scrape examples from https://meyerphi.github.io/strix-demo/ and format them in order to use them in Crome
