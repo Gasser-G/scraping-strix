@@ -23,9 +23,9 @@ def open_page():
 
 
 def get_assumptions(driver):
-    # get all 4 elements of CodeMirror-code (assumption, guarantees etc.)
+   # get all 4 elements of CodeMirror-code (assumption, guarantees input_propositions and output_proposition)
     all_title = driver.find_elements(by=By.XPATH, value="//div[@class = 'CodeMirror-code']")
-    # [0] scraps assumptions
+    # all_title[0] : scraps assumptions
     all_assumptions = all_title[0].find_elements(by=By.XPATH, value=".//div/pre/span[@role = 'presentation']")
     assumptions_list = []
     for assumption in all_assumptions:
@@ -37,7 +37,9 @@ def get_assumptions(driver):
 
 
 def get_guarantees(driver):
+    # get all 4 elements of CodeMirror-code (assumption, guarantees input_propositions and output_proposition)
     all_title = driver.find_elements(by=By.XPATH, value="//div[@class = 'CodeMirror-code']")
+    # all_title[1] : scraps garantees
     all_guarantees = all_title[1].find_elements(by=By.XPATH, value=".//div/pre[@role = 'presentation']/span[@role = 'presentation']")
     guarantees_list = []
 
@@ -52,10 +54,10 @@ def get_guarantees(driver):
 
 
 def get_input_propositions(driver):
-     # get all 4 elements of CodeMirror-code (assumption, guarantees etc.)
+     # get all 4 elements of CodeMirror-code (assumption, guarantees input_propositions and output_proposition)
     all_title = driver.find_elements(by=By.XPATH, value="//div[@class = 'CodeMirror-code']")
 
-    #[1] scraps guarantees
+    #all_title [2] : scraps input_propositions
     all_input_propositions = all_title[2].find_elements(by=By.XPATH, value=".//pre/span[@role = 'presentation']")
     input_propositions_list = []
     for input_proposition in all_input_propositions:
@@ -65,9 +67,10 @@ def get_input_propositions(driver):
 
 
 def get_output_propositions(driver):
-    # get all 4 elements of CodeMirror-code (assumption, guarantees etc.)
+    # get all 4 elements of CodeMirror-code (assumption, guarantees input_propositions and output_proposition)
     all_title = driver.find_elements(by=By.XPATH, value="//div[@class = 'CodeMirror-code']")
-    # [1] scraps guarantees
+    
+    # all_title [3] : scraps output_propositions
     all_guarantees = all_title[3].find_elements(by=By.XPATH, value=".//pre/span[@role = 'presentation']")
     output_propositions_list = []
     for output_proposition in all_guarantees:
