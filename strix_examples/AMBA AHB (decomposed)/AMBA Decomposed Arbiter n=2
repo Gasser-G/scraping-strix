@@ -28,9 +28,9 @@ G (hgrant_1 -> (busreq <-> hbusreq_1))
 
 G (!allready -> !decide)
 
-ERROR
+G (decide <-> (!(X hgrant_0 <-> hgrant_0) | !(X hgrant_1 <-> (hgrant_1))))
 
-ERROR
+G ((!hbusreq_0 & !hbusreq_1 & decide) -> X hgrant_0)
 
 ! decide
 

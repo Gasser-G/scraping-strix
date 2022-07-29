@@ -8,7 +8,7 @@ true
 
 **GUARANTEES**
 
-(G F p_0 & G F p_1 & G F p_2) <-> G F acc
+(G F p_0 & G F p_1 & G F p_2 & G F p_3) <-> G F acc
 
 **INPUTS**
 

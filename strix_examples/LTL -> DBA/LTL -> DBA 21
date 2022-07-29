@@ -8,11 +8,11 @@ true
 
 **GUARANTEES**
 
-(G (p -> F q) & G (q -> F r)) <-> G F acc
+G F (p <-> X X X q) <-> G F acc
 
 **INPUTS**
 
-p, q, r
+p, q
 
 **OUTPUTS**
 

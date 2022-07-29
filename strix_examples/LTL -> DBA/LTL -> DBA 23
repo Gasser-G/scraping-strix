@@ -8,7 +8,7 @@ true
 
 **GUARANTEES**
 
-G (p -> X X X q) <-> G F acc
+G (p -> G q) <-> G F acc
 
 **INPUTS**
 

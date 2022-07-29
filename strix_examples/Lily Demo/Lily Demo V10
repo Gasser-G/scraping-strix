@@ -4,18 +4,18 @@ Lily Demo V10
 
 **ASSUMPTIONS**
 
-G F req
+(G F req) | (F cancel)
 
 **GUARANTEES**
 
-G F grant
+(G F grant) | (G ack)
 
 **INPUTS**
 
-req
+req, cancel
 
 **OUTPUTS**
 
-grant
+grant, ack
 
 **END**

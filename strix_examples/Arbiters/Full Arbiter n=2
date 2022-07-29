@@ -22,9 +22,9 @@ request_0 R !grant_0
 
 request_1 R !grant_1
 
-ERROR
+G (request_0 -> F grant_0)
 
-ERROR
+G (request_1 -> F grant_1)
 
 **INPUTS**
 

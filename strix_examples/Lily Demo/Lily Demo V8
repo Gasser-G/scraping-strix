@@ -4,19 +4,15 @@ Lily Demo V8
 
 **ASSUMPTIONS**
 
-G (cancel -> X (go | X go))
+G F req
 
 **GUARANTEES**
 
-G (req -> (grant | cancel | X (grant | cancel | X (grant | cancel | X (grant | cancel)))))
-
-G (grant -> X !grant)
-
-G (cancel -> X (!grant U go))
+G F grant
 
 **INPUTS**
 
-req, cancel, go
+req
 
 **OUTPUTS**
 

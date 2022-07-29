@@ -36,7 +36,7 @@ G (!g2 | !g3)
 
 G (!g2 | !g4)
 
-ERROR
+G (!g3 | !g4)
 
 **INPUTS**
 

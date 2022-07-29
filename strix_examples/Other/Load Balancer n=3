@@ -28,9 +28,9 @@ G (!idle -> X (!grant_0 & !grant_1 & !grant_2))
 
 G F (request_0 -> X grant_0)
 
-ERROR
+G F (request_1 -> X grant_1)
 
-ERROR
+G F (request_2 -> X grant_2)
 
 **INPUTS**
 
