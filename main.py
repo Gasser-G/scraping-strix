@@ -23,9 +23,9 @@ def open_page():
 
 
 def get_assumptions(driver):
-    # ici on recup tous les elements CodeMirror-code donc 4 pour assumption, guarantees etc
+    # get all 4 elements of CodeMirror-code (assumption, guarantees etc.)
     all_title = driver.find_elements(by=By.XPATH, value="//div[@class = 'CodeMirror-code']")
-    # Ici [0] va chercher toutes les assumptions
+    # [0] scraps assumptions
     all_assumptions = all_title[0].find_elements(by=By.XPATH, value=".//div/pre/span[@role = 'presentation']")
     assumptions_list = []
     for assumption in all_assumptions:
@@ -40,8 +40,6 @@ def get_guarantees(driver):
     all_title = driver.find_elements(by=By.XPATH, value="//div[@class = 'CodeMirror-code']")
     all_guarantees = all_title[1].find_elements(by=By.XPATH, value=".//div/pre[@role = 'presentation']/span[@role = 'presentation']")
     guarantees_list = []
-    print("la taille va être de", len(all_guarantees))
-    print(all_guarantees)
 
     for guarantee in all_guarantees:
         guarantee_value = guarantee.text
@@ -49,16 +47,15 @@ def get_guarantees(driver):
             print('ERROR')
             guarantee_value = 'ERROR'
         guarantees_list.append(guarantee_value)
-    print(guarantees_list)
 
     return guarantees_list
 
 
 def get_input_propositions(driver):
-    # ici on recup tous les elements CodeMirror-code donc 4 pour assumption, guarantees etc
+     # get all 4 elements of CodeMirror-code (assumption, guarantees etc.)
     all_title = driver.find_elements(by=By.XPATH, value="//div[@class = 'CodeMirror-code']")
 
-    # Ici [1] va chercher toutes les guarantee
+    #[1] scraps guarantees
     all_input_propositions = all_title[2].find_elements(by=By.XPATH, value=".//pre/span[@role = 'presentation']")
     input_propositions_list = []
     for input_proposition in all_input_propositions:
@@ -68,9 +65,9 @@ def get_input_propositions(driver):
 
 
 def get_output_propositions(driver):
-    # ici on recup tous les elements CodeMirror-code donc 4 pour assumption, guarantees etc
+    # get all 4 elements of CodeMirror-code (assumption, guarantees etc.)
     all_title = driver.find_elements(by=By.XPATH, value="//div[@class = 'CodeMirror-code']")
-    # Ici [1] va chercher toutes les guarantees
+    # [1] scraps guarantees
     all_guarantees = all_title[3].find_elements(by=By.XPATH, value=".//pre/span[@role = 'presentation']")
     output_propositions_list = []
     for output_proposition in all_guarantees:
