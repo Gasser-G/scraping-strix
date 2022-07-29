@@ -46,7 +46,6 @@ def get_guarantees(driver):
     for guarantee in all_guarantees:
         guarantee_value = guarantee.text
         if guarantee_value == '':
-            print('ERROR')
             guarantee_value = 'ERROR'
         guarantees_list.append(guarantee_value)
 
@@ -62,6 +61,8 @@ def get_input_propositions(driver):
     input_propositions_list = []
     for input_proposition in all_input_propositions:
         input_proposition_value = input_proposition.text
+        if input_proposition_value == '':
+            input_proposition_value = 'ERROR'
         input_propositions_list.append(input_proposition_value)
     return input_propositions_list
 
@@ -75,6 +76,8 @@ def get_output_propositions(driver):
     output_propositions_list = []
     for output_proposition in all_guarantees:
         output_proposition_value = output_proposition.text
+        if output_proposition_value == '':
+            output_proposition_value = 'ERROR'
         output_propositions_list.append(output_proposition_value)
     return output_propositions_list
 
@@ -142,23 +145,29 @@ def create_txt_file(driver, path, example):
     file.write("**ASSUMPTIONS**\n\n")
     assumptions_list = get_assumptions(driver)
     for assumption in assumptions_list:
+        if assumption == 'ERROR':
+            print('error in assumption while creating', example)
         file.write(assumption + "\n\n")
 
     file.write("**GUARANTEES**\n\n")
     guarantees_list = get_guarantees(driver)
     for guarantee in guarantees_list:
-        if guarantee == '':
-            print('ERROR IN', example)
+        if guarantee == 'ERROR':
+            print('error in guarantees while creating', example)
         file.write(guarantee + "\n\n")
 
     file.write("**INPUTS**\n\n")
     input_proposition_list = get_input_propositions(driver)
     for input_proposition in input_proposition_list:
+        if input_proposition == 'ERROR':
+            print('error in input_proposition while creating', example)
         file.write(input_proposition + "\n\n")
 
     file.write("**OUTPUTS**\n\n")
     output_proposition_list = get_output_propositions(driver)
     for output_proposition in output_proposition_list:
+        if output_proposition == 'ERROR':
+            print('error in output_proposition while creating', example)
         file.write(output_proposition + "\n\n")
 
     file.write("**END**")
