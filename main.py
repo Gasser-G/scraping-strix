@@ -4,7 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 
-DRIVER_PATH = '/home/guillaume/Documents/scraping/chromedriver'
+DRIVER_PATH = 'chromedriver'
 options = Options()
 options.add_argument('--headless')
 dir_name = "strix_examples"
